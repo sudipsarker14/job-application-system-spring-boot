@@ -1,12 +1,26 @@
 package com.example.job_application.jobs;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+//import jakarta.persistence.Table;
+
+
+@Entity
+//@Table(name = "job_table") // to create another name of the table
 public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String description;
     private String maxSalary;
     private String minSalary;
     private String location;
+
+    public Job() {
+    }
 
     public Job(long id, String name, String description, String maxSalary, String minSalary, String location) {
         this.id = id;
